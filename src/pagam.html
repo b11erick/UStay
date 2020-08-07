@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" charset="utf-8">
+        <title>UStay</title>
+        <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+            Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+        }
+        p{
+            font-style: 'RedHatDisplay';
+            color: rgb(66,69,94);
+            font-weight: bold;
+            font-size: 14px;
+        }
+        h1{
+            font-style: 'RedHatDisplay';
+            color: rgb(66,69,94);
+            text-align: center;
+        }
+        img {
+            position:relative;
+            top:170px;
+            height: 70px;
+        }
+
+
+ .form {
+    background-color: rgb(215,240,237);
+    border-radius: 40px;
+    width: 350px;
+    height: 65px;
+    font-size: 20px;
+    font-style: 'RedHatDisplay';
+    color: rgb(62,65,89);
+    font-weight: bold;
+    border: 1px;
+    position: relative;
+    top:90px;
+    margin-bottom: 40px;
+    text-align: center;
+ }
+ .Button2 {
+    background-color: rgb(215,240,237);
+    border-radius: 40px;
+    width: 350px;
+    height: 65px;
+    font-size: 15pt;
+    font-style: 'RedHatDisplay';
+    color: rgb(62,65,89);
+    font-weight: bold;
+    border: 1px;
+    position: relative;
+    top:210px;
+ }
+ .formsm {
+    background-color: rgb(215,240,237);
+    border-radius: 40px;
+    width: 120px;
+    height: 60px;
+    font-size: 15pt;
+    font-style: 'RedHatDisplay';
+    color: rgb(62,65,89);
+    font-weight: bold;
+    border: 1px;
+    position: relative;
+    top:80px;
+    left: 15px;
+    text-align: center;
+ }
+ .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            position: relative;
+            left: 20px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+        </style>
+        </head>
+        <body>
+            <h1>U-DORM</h1>
+            
+            <div class=formul>
+                <form>
+                    <input type="number" class="form"id="num" name="num" value="0000000000000000">
+                    <!--Form doesnt lead anywhere for now-->
+                </form>
+                <form>
+                    <input type="text" class="form"id="name" name="name" value="Cláudia L Murano">
+                    <!--Form doesnt lead anywhere for now-->
+                </form>
+
+                <div class="row">
+                    <div class="column">
+                        <form>
+                            <input type="text" class="formsm"id="name" name="name" value="04/24">
+                            <!--Form doesnt lead anywhere for now-->
+                        </form>
+                    </div>
+                    <div class="column">
+                        <form>
+                            <input type="text" class="formsm"id="name" name="name" value="000">
+                            <!--Form doesnt lead anywhere for now-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <img src="img/paym.png"/>
+            <div>
+                <button class="Button2" onclick="location.href = 'reserend.html';" id="2Button" class="float-left submit-button" >PAGAR</button>
+            <!--Need's to do the payment-->
+            </div>
+        </body>
+        </html>

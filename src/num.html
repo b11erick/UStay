@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" charset="utf-8">
+        <title>UStay</title>
+        <style>
+            html {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    background: white;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+ }
+h1{
+   font-style: 'RedHatDisplay';
+   color: rgb(66,69,94);
+   text-align: center;
+   padding-top: 50px;
+ }
+ form{
+     font-style: 'RedHatDisplay';
+     font-size: 13pt;
+     color: black;
+     font-weight: bold;
+     padding-left: 80px;
+ }
+ input{
+    border: none;
+    border-bottom: 2px solid rgb(221,221,221);
+    width: 80%;
+    padding-top: 25px;
+ }
+ .theButton {
+    background-color: rgb(215,240,237);
+    border-radius: 40px;
+    width: 350px;
+    height: 65px;
+    font-size: 16pt;
+    font-style: 'RedHatDisplay';
+    color: rgb(62,65,89);
+    font-weight: bold;
+    border: 1px;
+    margin: 70px 2px;
+ }
+        </style>
+    </head>
+    <body>
+        <div>
+        <h1>INSIRA SEU TELEMÓVEL</h1>
+    </div>
+
+    <div class="form">
+        <form>
+            <label for="num">Número do telemóvel</label><br/>
+            <input type="number" id="num" name="num">
+            <!--Form doesnt lead anywhere for now-->
+        </form>
+    </div>
+
+    <div>
+        <button class="theButton" onclick="location.href = 'pass.html';" id="theButton" class="float-left submit-button" >CONTINUAR</button>
+        <!--Still need to submit the form and then procede to password-->
+     </div>
+
+    </body>
+    </html>

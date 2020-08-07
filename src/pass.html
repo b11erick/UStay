@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" charset="utf-8">
+        <title>UStay</title>
+        <style>
+            html {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    background: white;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+ }
+ h1{
+   font-style: 'RedHatDisplay';
+   color: rgb(66,69,94);
+   text-align: center;
+   padding-top: 50px;
+ }
+ p{
+   text-align: center;
+   font-weight: bold;
+ }
+ form{
+   position: relative;
+   left:90px;
+ }
+
+
+ </style>
+    </head>
+    <body>
+        <div>
+            <h1>INSIRA SUA SENHA</h1>
+        </div>
+
+        <div class="wrapper">
+          <form class="form1" action="perfili.html">
+              <div class="input nobottomborder">
+                  <div class="inputcontent">
+                      <input type="password" id="password" /><br />
+                  </div>
+              </div>
+
+              <div class="buttons">
+                  <input class="invbutton" type="button" value="Login" onclick="checkPassword()" style="display: none;"/>
+              </div>
+          </form>
+      </div>
+
+        <p>Esqueceu a senha?</p> <!--Needs to redirect to the page to get the password back-->
+        
+        <div id="temp">
+          <button class="tempButton" onclick="location.href = 'reser1.html';" id="tempButton" class="float-left submit-button" >Ir para as reservas "Temporario"</button>
+        </div>
+
+
+
+      <script>
+        function checkPassword(){
+         if(document.getElementById('password').value == '1234'){
+            location.href = "perfili.html";
+           } else {
+           alert('Password Errada');
+            return false;
+          }
+         }
+        </script>
+        <!--Script needs to look for password in db-->
+
+
+    </body>
+</html>

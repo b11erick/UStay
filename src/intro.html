@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+       <!--Carousel and Normal Style Start-->
+       <style>
+          html {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    background: white;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+ }
+
+ 
+ *,
+ *:before,
+ *:after {
+    box-sizing: inherit;
+ }
+ 
+ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 3rem auto;
+ }
+ 
+ .slider {
+    width: 350px;
+    height: 500px;
+    margin: 0 auto;
+    background: white;
+    overflow: hidden;
+ }
+ 
+ .slider__wrapper {
+    height: 500px;
+    transition: transform 0.3s;
+ }
+ 
+ .slide {
+    position: relative;
+    float: left;
+    width: 350px;
+    height: 500px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    pointer-events: none;
+ 
+    &::before {
+       content: '';
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       height: 40%;
+       background: linear-gradient(transparent, black);
+    }
+ }
+ 
+ .slide__img {
+    width: 100%;
+    height: 270px;
+    object-fit: scale-down;
+ }
+ 
+ .slide__text {
+    position: absolute;
+    color: rgb(66,69,94);
+    top: 300px;
+    bottom: 5px;
+    left: 0;
+    padding: 10px;
+    font-style: 'RedHatDisplay';
+    font-weight: bold;
+    font-size: 21pt;
+    text-align: center;
+ }
+ 
+ .swipe {
+    margin-top: 2.5rem;
+ }
+ 
+ 
+ @keyframes moving-finger {
+    from {
+       transform: translatex(10px);
+    }
+    to {
+       transform: translatex(0);
+    }
+ }
+ .theButton {
+    background-color: rgb(215,240,237);
+    border-radius: 40px;
+    width: 350px;
+    height: 65px;
+    font-size: 15pt;
+    font-style: 'RedHatDisplay';
+    color: rgb(62,65,89);
+    font-weight: bold;
+    border: 1px;
+ }
+ h3{
+   font-style: 'RedHatDisplay';
+   font-size: 36pt;
+   color: rgb(66,69,94);
+   font-weight: bold;
+   text-align: center;
+ }
+
+ }
+       </style>
+       <!--Style Ending-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" charset="utf-8">
+        <title>UStay</title>
+
+    </head>
+    <body>
+
+      <div>
+      <h3>U-STAY</h3>
+    </div>
+
+
+    <div id="car">
+    <div class="container">
+      <div class="slider">
+         <div class="slider__wrapper">
+            <div class="slide">
+               <img src="img\int1.png" alt="img1" class="slide__img">
+               <p class="slide__text">Uma nova experiência em hospedagem</p>
+            </div>
+            <div class="slide">
+               <img src="img\int2.png" alt="img2" class="slide__img">
+               <p class="slide__text">Baixo Custo para  Estudantes e Turistas</p>
+            </div>
+            <div class="slide">
+               <img src="img\int3.png" alt="img3" class="slide__img">
+               <p class="slide__text">Check-in/Check-out a um clique</p>
+            </div>
+            <div class="slide">
+               <img src="img/int4.png" alt="img4" class="slide__img">
+               <p class="slide__text">Tenha uma experiência única em matéria de hospedagem</p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div>
+      <button class="theButton" onclick="location.href = 'num.html';" id="theButton" class="float-left submit-button" >COMEÇAR</button>
+   </div>
+
+<!--Carousel Script Start-->
+   <script>
+   const container = document.querySelector('.slider');
+   const container_width = container.clientWidth;
+   const imgs_wrapper = document.querySelector('.slider__wrapper');
+   const imgs = document.querySelectorAll('.slide');
+   const total_imgs = imgs.length;
+   let current_index = 0;
+   let pointer_is_down = false;
+   let [start_x, end_x] = [0, 0];
+   let move_distance = 0;
+      function init() {
+   imgs_wrapper.style.width = `${container_width * total_imgs}px`;
+}
+
+// Mousemove and Touchmove Event
+function createDraggingEffects() {
+   const max_distance = 2;
+   const scrolled_distance = (current_index * container_width) + (start_x - end_x) / max_distance;
+
+   switchImages(-scrolled_distance);
+}
+
+// Mouseup and Touchend Event
+function calculateFinalMoveDistance() {
+   const scrolled_distance = Math.abs(start_x - end_x);
+   const minimum_distance = 30;
+
+   if (scrolled_distance < minimum_distance) {
+      move_distance = -(current_index * container_width);
+      switchImages();
+      return false;
+   }
+
+   if (start_x > end_x & current_index < total_imgs - 1) { // scroll next
+      current_index++;
+   } else if (start_x < end_x && current_index > 0) { // scroll prev
+      current_index--;
+   }
+
+   move_distance = -(current_index * container_width);
+   switchImages(move_distance);
+}
+
+// Switch Images
+function switchImages(scrolled_number) {
+   const distance = scrolled_number || move_distance;
+
+   imgs_wrapper.style.transform = `translateX(${distance}px)`;
+}
+
+// Mouseleave event
+function handleMouseLeave(e) {
+   if (!pointer_is_down) return false;
+
+   pointer_is_down = false;
+   [start_x, end_x] = [0, 0];
+   switchImages();
+}
+
+init();
+
+container.addEventListener('mousedown', (e) => {
+   e.preventDefault();
+   pointer_is_down = true;
+   start_x = e.pageX;
+});
+
+container.addEventListener('mousemove', (e) => {
+   e.preventDefault();
+   if (!pointer_is_down) return false;
+   end_x = e.pageX;
+   createDraggingEffects();
+});
+
+container.addEventListener('mouseup', (e) => {
+   e.preventDefault();
+   pointer_is_down = false;
+   calculateFinalMoveDistance();
+});
+
+container.addEventListener('mouseleave', handleMouseLeave);
+
+container.addEventListener('touchstart', (e) => {
+   pointer_is_down = true;
+   start_x = e.touches[0].pageX;
+});
+
+container.addEventListener('touchmove', (e) => {
+   if (!pointer_is_down) return false;
+   end_x = e.touches[0].pageX;
+   createDraggingEffects();
+});
+
+container.addEventListener('touchend', (e) => {
+   pointer_is_down = false;
+   calculateFinalMoveDistance();
+});
+</script>
+<!--Carousel Ending-->
+
+</div>
+</body>
+</html>

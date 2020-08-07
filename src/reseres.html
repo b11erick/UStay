@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" charset="utf-8">
+        <title>UStay</title>
+        <style>
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+            Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+        }
+        p{
+            font-style: 'RedHatDisplay';
+            color: rgb(66,69,94);
+            text-align: center;
+            font-weight: bold;
+            font-size: 19px;
+            padding: 20px;
+        }
+        h1{
+            font-style: 'RedHatDisplay';
+            color: rgb(66,69,94);
+            text-align: center;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            position: relative;
+            left: 20px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .i1 {
+            position: relative;
+            top: 10px;
+            right: 15px;
+        }
+        .i2 {
+            position: relative;
+            top: 8px;
+            left: 35px;
+        }
+        .i3 {
+            position: relative;
+            right: 15px;
+            top:15px;
+        }
+        .i4 {
+            position: relative;
+            top: 18px;
+            left: 35px;
+        }
+        </style>
+        </head>
+        <body>
+            <h1>ESTUDANTE</h1>
+            
+            <div>
+                Imagem/Nome do Perfil
+                <!--Go get both-->
+            </div>
+
+                <div class="row">
+                    <div class="column">
+                      <img src="img/res1s.png" alt="1semestre" class="i1" onclick="location.href = 'rlocal.html';" >
+                    </div>
+                    <div class="column">
+                      <img src="img/res2s.png" alt="2semestre" class="i2" onclick="location.href = 'rlocal.html';" >
+                    </div>
+                    <div class="column">
+                        <img src="img/resan.png" alt="anual" class="i3" onclick="location.href = 'rlocal.html';" >
+                      </div>
+                      <div class="column">
+                        <img src="img/resve.png" alt="verao" class="i4" onclick="location.href = 'rlocal.html';" >
+                      </div>
+                </div>
+                <!--Needs to save choice and then consider options later-->
+        </body>
+        </html>
