@@ -40,7 +40,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^4.0.0",
-    "eslint": "^7.5.0",
+    "eslint": "^9.26.0",
     "eslint-plugin-react": "^7.20.3",
     "eslint-watch": "^7.0.0",
     "file-loader": "^6.0.0",
